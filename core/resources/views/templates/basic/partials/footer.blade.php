@@ -141,17 +141,6 @@
             }
         });
 
-        $('.policy').on('click',function(){
-            $.ajaxSetup({
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                }
-            });
-            $.get('{{route('cookie.accept')}}', function(response){
-                $('.cookie__wrapper').addClass('d-none');
-                notify('success', response);
-            });
-        });
     })();
 </script>
 @endpush
